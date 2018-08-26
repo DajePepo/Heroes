@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 class CardWrapperView: UIView {
-    let cardView = CardView()
     
+    // Properties
+    let cardView = CardView()
     var isTouched: Bool = false {
         didSet {
             var transform = CGAffineTransform.identity
@@ -22,6 +23,7 @@ class CardWrapperView: UIView {
         }
     }
     
+    // Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -41,6 +43,7 @@ class CardWrapperView: UIView {
         addSubview(cardView)
     }
     
+    // Methods
     override func layoutSubviews() {
         super.layoutSubviews()
         if cardView.superview == self {

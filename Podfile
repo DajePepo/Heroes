@@ -12,6 +12,7 @@ target 'Heroes' do
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 4.0'
   pod 'Hero'
+  pod 'lottie-ios'
 
   target 'HeroesTests' do
     inherit! :search_paths

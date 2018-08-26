@@ -1,5 +1,5 @@
 //
-//  Hero.swift
+//  SuperHero.swift
 //  Heroes
 //
 //  Created by Pietro Santececca on 25.08.18.
@@ -20,7 +20,6 @@ class SuperHero: Mappable {
             return "\(imagePath!).\(imageExtension!)"
         }
     }
-    
     
     required init?(map: Map) {}
     

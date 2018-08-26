@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A22E3B52132D87F00297616 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22E3B42132D87F00297616 /* LoadingView.xib */; };
+		9A22E3B72132D97800297616 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22E3B62132D97800297616 /* LoadingView.swift */; };
+		9A90573521330EE900F2DF44 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90573421330EE900F2DF44 /* Comic.swift */; };
 		9ABD486F2131918800FF96AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD486E2131918800FF96AE /* AppDelegate.swift */; };
-		9ABD48712131918800FF96AE /* HereosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48702131918800FF96AE /* HereosViewController.swift */; };
+		9ABD48712131918800FF96AE /* HereosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48702131918800FF96AE /* HereosListViewController.swift */; };
 		9ABD48742131918800FF96AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD48722131918800FF96AE /* Main.storyboard */; };
 		9ABD48762131918800FF96AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD48752131918800FF96AE /* Assets.xcassets */; };
 		9ABD48792131918800FF96AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD48772131918800FF96AE /* LaunchScreen.storyboard */; };
 		9ABD48842131918900FF96AE /* HeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48832131918900FF96AE /* HeroesTests.swift */; };
 		9ABD488F2131918900FF96AE /* HeroesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD488E2131918900FF96AE /* HeroesUITests.swift */; };
-		9ABD489D213196D400FF96AE /* HeroesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD489C213196D400FF96AE /* HeroesDataManager.swift */; };
+		9ABD489D213196D400FF96AE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD489C213196D400FF96AE /* DataManager.swift */; };
 		9ABD489F2131984400FF96AE /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD489E2131984400FF96AE /* SuperHero.swift */; };
 		9ABD48A72131C80000FF96AE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD48A62131C80000FF96AE /* CardView.xib */; };
 		9ABD48A92131C81000FF96AE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48A82131C81000FF96AE /* CardView.swift */; };
 		9ABD48AB2131C9C100FF96AE /* CardWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48AA2131C9C100FF96AE /* CardWrapperView.swift */; };
-		9ABD48AD2131D07300FF96AE /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48AC2131D07300FF96AE /* HeroTableViewCell.swift */; };
+		9ABD48AD2131D07300FF96AE /* HeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48AC2131D07300FF96AE /* HeroesTableViewCell.swift */; };
 		9ABD48AF2131D1A700FF96AE /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD48AE2131D1A700FF96AE /* HeroDetailViewController.swift */; };
+		9ADB2B9E2132EAC20044AA5D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB2B9D2132EAC20044AA5D /* FilterViewController.swift */; };
+		9ADB2BA021330B1F0044AA5D /* ComicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB2B9F21330B1F0044AA5D /* ComicsCollectionViewCell.swift */; };
+		9AE4FAFA2132D6D70059750F /* loadingAnimationView.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4FAF92132D6D70059750F /* loadingAnimationView.json */; };
 		B2A995F21C9309131034970C /* Pods_HeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967D47D853ED67555517E8B3 /* Pods_HeroesTests.framework */; };
 		B4257FD095BEB89736B0A4A4 /* Pods_Heroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831EAA689A489AC1A2B1E8B0 /* Pods_Heroes.framework */; };
 		C09C8B5BBF125E45F85E8F6D /* Pods_HeroesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CB7774EF0AA4EE218DF12C /* Pods_HeroesUITests.framework */; };
@@ -51,9 +57,12 @@
 		7FAE0AA392B63CEE8F33D35B /* Pods-HeroesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeroesUITests/Pods-HeroesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		831EAA689A489AC1A2B1E8B0 /* Pods_Heroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		967D47D853ED67555517E8B3 /* Pods_HeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A22E3B42132D87F00297616 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		9A22E3B62132D97800297616 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9A90573421330EE900F2DF44 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		9ABD486B2131918800FF96AE /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABD486E2131918800FF96AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9ABD48702131918800FF96AE /* HereosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereosViewController.swift; sourceTree = "<group>"; };
+		9ABD48702131918800FF96AE /* HereosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereosListViewController.swift; sourceTree = "<group>"; };
 		9ABD48732131918800FF96AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9ABD48752131918800FF96AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9ABD48782131918800FF96AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,13 +73,16 @@
 		9ABD488A2131918900FF96AE /* HeroesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABD488E2131918900FF96AE /* HeroesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUITests.swift; sourceTree = "<group>"; };
 		9ABD48902131918900FF96AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9ABD489C213196D400FF96AE /* HeroesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataManager.swift; sourceTree = "<group>"; };
+		9ABD489C213196D400FF96AE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9ABD489E2131984400FF96AE /* SuperHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
 		9ABD48A62131C80000FF96AE /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		9ABD48A82131C81000FF96AE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9ABD48AA2131C9C100FF96AE /* CardWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWrapperView.swift; sourceTree = "<group>"; };
-		9ABD48AC2131D07300FF96AE /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
+		9ABD48AC2131D07300FF96AE /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
 		9ABD48AE2131D1A700FF96AE /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		9ADB2B9D2132EAC20044AA5D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		9ADB2B9F21330B1F0044AA5D /* ComicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		9AE4FAF92132D6D70059750F /* loadingAnimationView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimationView.json; sourceTree = "<group>"; };
 		A16C5DC8589B9372BF203DB6 /* Pods-HeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeroesTests/Pods-HeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC01E88A423789A674E6DD94 /* Pods-HeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeroesTests/Pods-HeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +195,7 @@
 		9ABD48A02131B28200FF96AE /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
-				9ABD489C213196D400FF96AE /* HeroesDataManager.swift */,
+				9ABD489C213196D400FF96AE /* DataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				9ABD489E2131984400FF96AE /* SuperHero.swift */,
+				9A90573421330EE900F2DF44 /* Comic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +215,10 @@
 				9ABD48A62131C80000FF96AE /* CardView.xib */,
 				9ABD48A82131C81000FF96AE /* CardView.swift */,
 				9ABD48AA2131C9C100FF96AE /* CardWrapperView.swift */,
-				9ABD48AC2131D07300FF96AE /* HeroTableViewCell.swift */,
+				9ABD48AC2131D07300FF96AE /* HeroesTableViewCell.swift */,
+				9A22E3B42132D87F00297616 /* LoadingView.xib */,
+				9A22E3B62132D97800297616 /* LoadingView.swift */,
+				9ADB2B9F21330B1F0044AA5D /* ComicsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,8 +226,9 @@
 		9ABD48A32131B2A200FF96AE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9ABD48702131918800FF96AE /* HereosViewController.swift */,
+				9ABD48702131918800FF96AE /* HereosListViewController.swift */,
 				9ABD48AE2131D1A700FF96AE /* HeroDetailViewController.swift */,
+				9ADB2B9D2132EAC20044AA5D /* FilterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +247,7 @@
 				9ABD48752131918800FF96AE /* Assets.xcassets */,
 				9ABD48772131918800FF96AE /* LaunchScreen.storyboard */,
 				9ABD487A2131918800FF96AE /* Info.plist */,
+				9AE4FAF92132D6D70059750F /* loadingAnimationView.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -344,7 +362,9 @@
 			files = (
 				9ABD48792131918800FF96AE /* LaunchScreen.storyboard in Resources */,
 				9ABD48762131918800FF96AE /* Assets.xcassets in Resources */,
+				9AE4FAFA2132D6D70059750F /* loadingAnimationView.json in Resources */,
 				9ABD48A72131C80000FF96AE /* CardView.xib in Resources */,
+				9A22E3B52132D87F00297616 /* LoadingView.xib in Resources */,
 				9ABD48742131918800FF96AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +435,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -424,6 +445,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -456,13 +478,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABD48AB2131C9C100FF96AE /* CardWrapperView.swift in Sources */,
+				9A90573521330EE900F2DF44 /* Comic.swift in Sources */,
 				9ABD48AF2131D1A700FF96AE /* HeroDetailViewController.swift in Sources */,
-				9ABD48712131918800FF96AE /* HereosViewController.swift in Sources */,
-				9ABD489D213196D400FF96AE /* HeroesDataManager.swift in Sources */,
+				9ABD48712131918800FF96AE /* HereosListViewController.swift in Sources */,
+				9ABD489D213196D400FF96AE /* DataManager.swift in Sources */,
+				9ADB2B9E2132EAC20044AA5D /* FilterViewController.swift in Sources */,
 				9ABD486F2131918800FF96AE /* AppDelegate.swift in Sources */,
 				9ABD489F2131984400FF96AE /* SuperHero.swift in Sources */,
-				9ABD48AD2131D07300FF96AE /* HeroTableViewCell.swift in Sources */,
+				9ABD48AD2131D07300FF96AE /* HeroesTableViewCell.swift in Sources */,
 				9ABD48A92131C81000FF96AE /* CardView.swift in Sources */,
+				9A22E3B72132D97800297616 /* LoadingView.swift in Sources */,
+				9ADB2BA021330B1F0044AA5D /* ComicsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

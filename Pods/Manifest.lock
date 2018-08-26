@@ -3,6 +3,7 @@ PODS:
   - CryptoSwift (0.11.0)
   - Hero (1.3.0)
   - Kingfisher (4.8.1)
+  - lottie-ios (2.5.0)
   - ObjectMapper (3.3.0)
   - SwiftyJSON (4.1.0)
 
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - CryptoSwift
   - Hero
   - Kingfisher (~> 4.0)
+  - lottie-ios
   - ObjectMapper
   - SwiftyJSON
 
@@ -20,6 +22,7 @@ SPEC REPOS:
     - CryptoSwift
     - Hero
     - Kingfisher
+    - lottie-ios
     - ObjectMapper
     - SwiftyJSON
 
@@ -28,9 +31,10 @@ SPEC CHECKSUMS:
   CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
   Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 6610d64889a681d9cbb18ec7b2bdcea974101ef6
+PODFILE CHECKSUM: 65f7267fb3ff74ed14cb84b1ce34d0862d428d63
 
 COCOAPODS: 1.5.3

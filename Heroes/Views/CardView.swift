@@ -11,11 +11,12 @@ import UIKit
 
 class CardView: UIView {
     
+    // Properties
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
     
+    // Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
