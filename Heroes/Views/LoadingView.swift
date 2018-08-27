@@ -17,6 +17,7 @@ class LoadingView: UIView {
     @IBOutlet weak var animationView: LOTAnimationView! {
         didSet {
             animationView.setAnimation(named: "loadingAnimationView")
+            animationView.loopAnimation = true
             animationView.play()
         }
     }

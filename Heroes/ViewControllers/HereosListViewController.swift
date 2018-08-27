@@ -70,19 +70,8 @@ class HereosListViewController: UIViewController {
     func loadNewHereos(completionHandler: @escaping () -> Void) {
         self.downloading = true
         DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
-            
-            // Increment the data source with the new items
-            // and create an array of IndexPath
-            let startIndex = self.hereos.count
             self.hereos.append(contentsOf: newHereos)
-            let finalIndex = self.hereos.count
-            var indexes = [IndexPath]()
-            for i in startIndex ..< finalIndex {
-                indexes.append(IndexPath(item: i, section: 0))
-            }
-            
-            // Add the new items in the collection view using the IndexPath array
-            self.hereosTableView.insertRows(at: indexes,with: .automatic)
+            self.hereosTableView.reloadData()
             self.downloading = false
             completionHandler()
         })
