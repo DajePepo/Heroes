@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CAK-lI-u5A">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ltr-7M-aLD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -119,9 +119,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lEy-Or-4Jj" secondAttribute="trailing" constant="20" id="86d-bQ-hQL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CAK-lI-u5A" secondAttribute="bottom" id="ALa-AL-10n"/>
+                            <constraint firstAttribute="bottom" secondItem="CAK-lI-u5A" secondAttribute="bottom" id="ALa-AL-10n"/>
                             <constraint firstItem="Cj9-q3-0fQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HeX-Hj-Ah3"/>
-                            <constraint firstItem="CAK-lI-u5A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OOo-Uc-sTR"/>
+                            <constraint firstItem="CAK-lI-u5A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OOo-Uc-sTR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CAK-lI-u5A" secondAttribute="trailing" id="Y7T-03-0jB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lEy-Or-4Jj" secondAttribute="bottom" id="f95-ox-Pdh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cj9-q3-0fQ" secondAttribute="bottom" constant="15" id="hN0-gw-9Pk"/>
