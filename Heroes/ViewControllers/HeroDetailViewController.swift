@@ -73,18 +73,14 @@ class HeroDetailViewController: UIViewController {
     }
     
     func hideLoadingMessage() {
-        UIView.animate(withDuration: 1, animations: { [unowned self] in
-            self.comicsMessageLabelContainer.isHidden = true
-            self.comicsCollectionContainer.isHidden = false
-        })
+        comicsMessageLabelContainer.isHidden = true
+        comicsCollectionContainer.isHidden = false
     }
 
     func showNoComicsMessage() {
         comicsMessageLabel.text = "There are not comics :("
-        UIView.animate(withDuration: 1, animations: { [unowned self] in
-            self.comicsMessageLabelContainer.isHidden = false
-            self.comicsCollectionContainer.isHidden = true
-        })
+        comicsMessageLabelContainer.isHidden = false
+        comicsCollectionContainer.isHidden = true
     }
 }
 
