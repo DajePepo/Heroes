@@ -79,15 +79,28 @@ class HereosListViewController: UIViewController {
     
     // Load data from marvel server and update the list with the new items
     func loadNewHereos(completionHandler: @escaping () -> Void) {
+        
+        // Start downloading
         downloading = true
         footerLoadingView.isHidden = false
         buttonsContainer.isHidden = true
         DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
             
-            let lastIndex = self.hereos.count
+            // Increment the data source with the new items
+            // and create an array of IndexPath
+            let startIndex = self.hereos.count
             self.hereos.append(contentsOf: newHereos)
-            self.hereosTableView.reloadData()
-            self.hereosTableView.scrollToRow(at: IndexPath(row: lastIndex, section: 0), at: .bottom, animated: false)
+            let finalIndex = self.hereos.count
+            var indexes = [IndexPath]()
+            for i in startIndex ..< finalIndex {
+                indexes.append(IndexPath(item: i, section: 0))
+            }
+            
+            // Add the new items in the collection view using the IndexPath array
+            self.hereosTableView.insertRows(at: indexes, with: .fade)
+            self.hereosTableView.scrollToRow(at: IndexPath(row: startIndex, section: 0), at: .bottom, animated: true)
+            
+            // Complete downloading
             self.downloading = false
             self.footerLoadingView.isHidden = true
             self.buttonsContainer.isHidden = false
