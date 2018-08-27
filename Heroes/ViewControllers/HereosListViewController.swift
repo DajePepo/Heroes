@@ -70,8 +70,11 @@ class HereosListViewController: UIViewController {
     func loadNewHereos(completionHandler: @escaping () -> Void) {
         self.downloading = true
         DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
+            
+            let startIndex = self.hereos.count
             self.hereos.append(contentsOf: newHereos)
             self.hereosTableView.reloadData()
+            self.hereosTableView.scrollToRow(at: IndexPath(row: startIndex, section: 0), at: .bottom, animated: false)
             self.downloading = false
             completionHandler()
         })
