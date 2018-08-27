@@ -15,12 +15,12 @@ class HeroDetailViewController: UIViewController {
     
     // Private properties
     private let reuseIdentifier = "ComicsCollectionViewCell"
-    private var hero: SuperHero?
     private var comics: [Comic] = []
 
     // Public properties
+    var hero: SuperHero?
     @IBOutlet weak var cardView: CardView!
-    @IBOutlet weak var heroDescription: UITextView!
+    @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var comicsCollectionContainer: UIView!
     @IBOutlet weak var comicsCollectionView: UICollectionView!
     @IBOutlet weak var comicsTitle: UILabel! {
@@ -28,12 +28,8 @@ class HeroDetailViewController: UIViewController {
             comicsTitle.text = "Comics"
         }
     }
-    @IBOutlet weak var noComicsLabel: UILabel! {
-        didSet {
-            noComicsLabel.text = "There are not comics :("
-            noComicsLabel.isHidden = true
-        }
-    }
+    @IBOutlet weak var comicsMessageLabel: UILabel!
+    @IBOutlet weak var comicsMessageLabelContainer: UIView!
     
     // Methods
     @IBAction func dismissDetailView(_ sender: Any) {
@@ -52,15 +48,11 @@ class HeroDetailViewController: UIViewController {
         self.heroDescription.text = hero.description != "" ? hero.description : "No description"
         
         // Load hero's comics data
+        showLoadingMessage()
         self.loadComics { [unowned self] in
             
-            // If there are no comics -> Show warning massage
-            if(self.comics.count == 0) {
-                UIView.animate(withDuration: 1, animations: {
-                    self.noComicsLabel.isHidden = false
-                    self.comicsCollectionContainer.isHidden = true
-                })
-            }
+            // If there are no comics -> Show warning massage -> Otherwise hide the loading message
+            self.comics.count == 0 ? self.showNoComicsMessage() : self.hideLoadingMessage()
         }
     }
     
@@ -73,7 +65,27 @@ class HeroDetailViewController: UIViewController {
             completionHandler()
         })
     }
+    
+    func showLoadingMessage() {
+        comicsMessageLabel.text = "Loading..."
+        comicsCollectionContainer.isHidden = true
+        comicsMessageLabelContainer.isHidden = false
+    }
+    
+    func hideLoadingMessage() {
+        UIView.animate(withDuration: 1, animations: { [unowned self] in
+            self.comicsMessageLabelContainer.isHidden = true
+            self.comicsCollectionContainer.isHidden = false
+        })
+    }
 
+    func showNoComicsMessage() {
+        comicsMessageLabel.text = "There are not comics :("
+        UIView.animate(withDuration: 1, animations: { [unowned self] in
+            self.comicsMessageLabelContainer.isHidden = false
+            self.comicsCollectionContainer.isHidden = true
+        })
+    }
 }
 
 // MARK: - UICollectionViewDataSource

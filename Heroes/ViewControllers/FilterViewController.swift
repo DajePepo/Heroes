@@ -30,11 +30,10 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func dismissAndSearch(_ sender: Any) {
-        self.dismiss(animated: true) { [unowned self] in
-            guard let heroName = self.textField.text else { return }
-            let notificationName = NSNotification.Name(rawValue: "FilterSuperHereosList")
-            NotificationCenter.default.post(name: notificationName, object: self, userInfo: ["heroName" : heroName])
-        }
+        guard let heroName = self.textField.text else { return }
+        let notificationName = NSNotification.Name(rawValue: "FilterSuperHereosList")
+        NotificationCenter.default.post(name: notificationName, object: self, userInfo: ["heroName" : heroName])
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

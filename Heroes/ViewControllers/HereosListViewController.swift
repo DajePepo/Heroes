@@ -13,7 +13,6 @@ import Lottie
 class HereosListViewController: UIViewController {
 
     // Private properties
-    private var hereos = [SuperHero]()
     private let reuseIdentifier = "HereosTableViewCell"
     private let segueIdentifier = "GoToHeroDetailView"
     private let rowHeight: CGFloat = 300
@@ -22,6 +21,7 @@ class HereosListViewController: UIViewController {
     private var filterName: String = ""
     
     // Public properties
+    var hereos = [SuperHero]()
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var hereosTableView: UITableView!
     @IBOutlet weak var hereosTableTitle: UILabel! {
@@ -68,7 +68,7 @@ class HereosListViewController: UIViewController {
     
     // Load data from marvel server and update the list with the new items
     func loadNewHereos(completionHandler: @escaping () -> Void) {
-        DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { newHereos in
+        DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
             
             // Increment the data source with the new items
             // and create an array of IndexPath
@@ -84,6 +84,14 @@ class HereosListViewController: UIViewController {
             self.hereosTableView.insertRows(at: indexes,with: .none)
             completionHandler()
         })
+    }
+    
+    // Function used to test Yoox server API, take a look at AppTVTests class
+    func testLoadingNewHereos(completionHandler: @escaping () -> Void) {
+        DataManager.retrieveHeroes() { [unowned self] newHereos in
+            self.hereos.append(contentsOf: newHereos)
+            completionHandler()
+        }
     }
     
     func addLoadingView() {
@@ -140,7 +148,7 @@ class HereosListViewController: UIViewController {
 
 // MARK: - TableView data source
 
-extension HereosViewController: UITableViewDataSource  {
+extension HereosListViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hero = self.hereos[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier) as! HeroesTableViewCell
@@ -157,7 +165,7 @@ extension HereosViewController: UITableViewDataSource  {
 
 // MARK: - TableView delegate
 
-extension HereosViewController: UITableViewDelegate {
+extension HereosListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.rowHeight
@@ -166,7 +174,7 @@ extension HereosViewController: UITableViewDelegate {
 
 // MARK: - ScrollView delegate
 
-extension HereosViewController : UIScrollViewDelegate {
+extension HereosListViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
