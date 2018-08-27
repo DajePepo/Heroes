@@ -28,7 +28,6 @@ class DataManager {
         }
         
         Alamofire.request(baseURL + action, parameters: parameters).responseJSON { response in
-            
             guard response.result.isSuccess,
                 let value = response.result.value,
                 let json = JSON(value).dictionaryObject,
@@ -46,7 +45,7 @@ class DataManager {
     }
     
     static func retrieveHeroes(offset: Int = 0, filter: String = "", completion: @escaping ([SuperHero]) -> Void) {
-        self.retrieveData(action: "characters") { results in
+        self.retrieveData(offset: offset, action: "characters") { results in
             let heroes = results.map { hero in SuperHero(JSON: hero)! }
             completion(heroes)
         }

@@ -68,6 +68,7 @@ class HereosListViewController: UIViewController {
     
     // Load data from marvel server and update the list with the new items
     func loadNewHereos(completionHandler: @escaping () -> Void) {
+        self.downloading = true
         DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
             
             // Increment the data source with the new items
@@ -81,7 +82,8 @@ class HereosListViewController: UIViewController {
             }
             
             // Add the new items in the collection view using the IndexPath array
-            self.hereosTableView.insertRows(at: indexes,with: .none)
+            self.hereosTableView.insertRows(at: indexes,with: .automatic)
+            self.downloading = false
             completionHandler()
         })
     }
@@ -182,10 +184,7 @@ extension HereosListViewController : UIScrollViewDelegate {
         
         // If it's the table view bottom -> Load new items
         if !downloading && offsetY >= contentHeight - scrollView.frame.size.height {
-            downloading = true
-            self.loadNewHereos { [unowned self] in
-                self.downloading = false
-            }
+            self.loadNewHereos() {}
         }
     }
     
