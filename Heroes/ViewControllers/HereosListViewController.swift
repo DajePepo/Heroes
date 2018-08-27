@@ -22,8 +22,19 @@ class HereosListViewController: UIViewController {
     
     // Public properties
     var hereos = [SuperHero]()
+    @IBOutlet weak var buttonsContainer: UIStackView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var hereosTableView: UITableView!
+    @IBOutlet weak var footerLoadingView: UIView! {
+        didSet {
+            footerLoadingView.isHidden = true
+            footerLoadingView.layer.cornerRadius = 24
+            footerLoadingView.layer.shadowColor = UIColor.black.cgColor
+            footerLoadingView.layer.shadowRadius = 12
+            footerLoadingView.layer.shadowOpacity = 0.20
+            footerLoadingView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        }
+    }
     @IBOutlet weak var hereosTableTitle: UILabel! {
         didSet {
             hereosTableTitle.text = "Hereos"
@@ -68,14 +79,18 @@ class HereosListViewController: UIViewController {
     
     // Load data from marvel server and update the list with the new items
     func loadNewHereos(completionHandler: @escaping () -> Void) {
-        self.downloading = true
+        downloading = true
+        footerLoadingView.isHidden = false
+        buttonsContainer.isHidden = true
         DataManager.retrieveHeroes(offset: self.hereos.count, filter: self.filterName, completion: { [unowned self] newHereos in
             
-            let startIndex = self.hereos.count
+            let lastIndex = self.hereos.count
             self.hereos.append(contentsOf: newHereos)
             self.hereosTableView.reloadData()
-            self.hereosTableView.scrollToRow(at: IndexPath(row: startIndex, section: 0), at: .bottom, animated: false)
+            self.hereosTableView.scrollToRow(at: IndexPath(row: lastIndex, section: 0), at: .bottom, animated: false)
             self.downloading = false
+            self.footerLoadingView.isHidden = true
+            self.buttonsContainer.isHidden = false
             completionHandler()
         })
     }
