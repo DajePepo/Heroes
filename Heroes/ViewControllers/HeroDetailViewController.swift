@@ -49,19 +49,19 @@ class HeroDetailViewController: UIViewController {
         
         // Load hero's comics data
         showLoadingMessage()
-        self.loadComics { [unowned self] in
+        self.loadComics { [weak self] in
             
             // If there are no comics -> Show warning massage -> Otherwise hide the loading message
-            self.comics.count == 0 ? self.showNoComicsMessage() : self.hideLoadingMessage()
+            self?.comics.count == 0 ? self?.showNoComicsMessage() : self?.hideLoadingMessage()
         }
     }
     
     // Load comics from marvel server and fill the collectin list with the downloaded items
     func loadComics(completionHandler: @escaping () -> Void) {
         guard let hero = self.hero else { return }
-        DataManager.retrieveComics(heroId: hero.identifier, completion: { [unowned self] comics in
-            self.comics = comics
-            self.comicsCollectionView.reloadData()
+        DataManager.retrieveComics(heroId: hero.identifier, completion: { [weak self] comics in
+            self?.comics = comics
+            self?.comicsCollectionView.reloadData()
             completionHandler()
         })
     }
